@@ -1,27 +1,19 @@
 import './App.css'
-import CounterOperations from "./components/CounterOperations.jsx";
 import {useContext} from "react";
 import {CounterContext} from "./context/CounterContext.jsx";
+import Item from "./components/Item.jsx";
+import Cart from "./components/Cart.jsx";
 
 function App() {
 
-    const counterState = useContext(CounterContext);
-    console.log("Context State", counterState);
-
     return (
-        <>
-            <h1>
-                Count is {counterState.count}
-            </h1>
-            <CounterOperations/>
-            <br/>
-            <CounterOperations/>
-            <br/>
-            <CounterOperations/>
-            <br/>
-            <CounterOperations/>
-            <br/>
-        </>
+        <div className="App">
+            <Item name={"Macbook"} price={100000}/>
+            <Item name={"iPhone"} price={50000}/>
+            <Item name={"iPad"} price={60000}/>
+
+            <Cart/>
+        </div>
     )
 }
 
